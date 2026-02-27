@@ -76,3 +76,21 @@ FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.Su
 SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
 FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.SubId = Sub.SubId
 WHERE Sub.SubName = 'cf';
+
+
+select * from Student where StudentName like 'h%';
+select * from Class;
+select * from Class where StartDate like '____-12-%';
+select * from Subject;
+select * from Mark;
+select * from Subject where Credit between 3 and 5;
+select * from Student;
+SET SQL_SAFE_UPDATES = 0;
+update Student set ClassId = 2 where StudentName = 'Hung';
+SET SQL_SAFE_UPDATES = 1;
+
+select s.StudentName, sub.SubName, m.Mark
+from Student s
+inner join Mark m on s.StudentId = m.StudentId
+inner join Subject sub on m.SubId = sub.SubId
+order by m.mark desc, s.StudentName asc;
