@@ -55,4 +55,24 @@ value(1,1,8,1),
 (1,2,10,2),
 (2,1,12,1);
 
-select * from Subject;
+select * from Student;
+select * from Student
+where Status = true;
+
+select * from Subject
+where Credit < 10;	
+
+select s.StudentId, s.StudentName, c.ClassName
+from Student s join Class c on s.ClassId = c.ClassId;
+
+select s.StudentId, s.StudentName, c.ClassName
+from Student s join Class c on s.ClassId = c.ClassId
+where c.ClassName = 'a1';
+
+
+SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
+FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.SubId = Sub.SubId;
+
+SELECT S.StudentId, S.StudentName, Sub.SubName, M.Mark
+FROM Student S join Mark M on S.StudentId = M.StudentId join Subject Sub on M.SubId = Sub.SubId
+WHERE Sub.SubName = 'cf';
